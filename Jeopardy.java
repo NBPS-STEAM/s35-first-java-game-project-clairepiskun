@@ -10,8 +10,11 @@ public class Jeopardy {
    for(int i = 10; i < 130; i += 30) {
       System.out.println(i);
     }
-
+  
     System.out.println("Welcome to Jeopardy! Let's get started.");
+  
+  boolean playAgain = true;
+  while (playAgain){
     
     //Ask user to choose category
     System.out.println("Choose a category. Dogs, Movies, or Candy for $200, $400, or $600.");
@@ -157,5 +160,10 @@ public class Jeopardy {
 //Prints out final score 
 System.out.println(score);
 
+System.out.println("Do you wish to play again? Y/N");
+    String finalAnswer = input.nextLine();
+    playAgain = finalAnswer.equalsIgnoreCase("y");
+  
+  }
   }
 }

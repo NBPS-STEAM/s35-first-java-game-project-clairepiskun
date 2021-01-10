@@ -94,7 +94,7 @@ public class Jeopardy {
     String movie400Answer = input.nextLine();
 
     if(movie400Answer.equals("Home Alone")){
-    System.out.println("Correcct! You have been awarded $400!");
+    System.out.println("Correct! You have been awarded $400!");
     score += 400;
   }
   else{
@@ -177,6 +177,7 @@ else{
 }
 
 //Asks user if they want to play again to iterate back to while loop
+//https://stackoverflow.com/questions/20228918/how-to-add-the-play-again-feature-for-java 
 System.out.println("Do you wish to play again? Y/N");
     String finalAnswer = input.nextLine();
     playAgain = finalAnswer.equalsIgnoreCase("y");

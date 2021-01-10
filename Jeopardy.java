@@ -4,19 +4,25 @@ public class Jeopardy {
 
   public static void main(String[] args) {
 
-    Scanner input = new Scanner(System.in);
-    int score = 0;
-    
-   for(int i = 10; i < 130; i += 30) {
-      System.out.println(i);
-    }
+  Scanner input = new Scanner(System.in);
+
+  //sets initial score to zero
+  int score = 0;
   
-    System.out.println("Welcome to Jeopardy! Let's get started.");
+  //Prints out welcome text
+  System.out.println("Welcome to Jeopardy! Let's get started.");
   
+  //Will allow user to play again from the start
   boolean playAgain = true;
   while (playAgain){
+
+  //gives illusion of loading   
+    System.out.println("Loading...");
+    for(int i = 10; i < 130; i += 30) {
+      System.out.println(i);
+    }
     
-    //Ask user to choose category
+    //Asks user to choose category
     System.out.println("Choose a category. Dogs, Movies, or Candy for $200, $400, or $600.");
     String category = input.nextLine();
 
@@ -159,7 +165,18 @@ public class Jeopardy {
 
 //Prints out final score 
 System.out.println(score);
+if(score <= 200){
+  System.out.println("Play again to win more!");
+}
+else if(score >= 600 && score <= 3400){
+  System.out.print("Congratulations! You have been awarded $");
+  System.out.println(score);
+}
+else{
+  System.out.println("Congratulations! You won Jeopardy!");
+}
 
+//Asks user if they want to play again to iterate back to while loop
 System.out.println("Do you wish to play again? Y/N");
     String finalAnswer = input.nextLine();
     playAgain = finalAnswer.equalsIgnoreCase("y");

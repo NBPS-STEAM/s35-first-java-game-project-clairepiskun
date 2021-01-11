@@ -16,7 +16,7 @@ public class Jeopardy {
   boolean playAgain = true;
   while (playAgain){
 
-  //gives illusion of loading   
+  //gives illusion of game loading up to 100%, starting at 10 with increments of 30
     System.out.println("Loading...");
     for(int i = 10; i < 130; i += 30) {
       System.out.println(i);
@@ -25,20 +25,22 @@ public class Jeopardy {
     //Asks user to choose category
     System.out.println("Choose a category. Dogs, Movies, or Candy for $200, $400, or $600.");
     String category = input.nextLine();
-
    //If user chooses Dogs for $200
     if(category.equals("Dogs for $200")){
-      System.out.println("These dogs were bred to pull sleds over long distances and are known for yelling.");
-      
-       String dog200Answer = input.nextLine();  
-
+      System.out.println("These dogs were bred to pull sleds over long distances and are known for yelling."); 
+   //Allows user to input their answer 
+       String dog200Answer = input.nextLine(); 
+    //Prints is user answers correctly 
        if(dog200Answer.equals("Husky") || dog200Answer.equals  ("Huskies")){
       System.out.println("Correct! You have been awarded $200!");
+  //adds $ to score
       score += 200;
     }   
     else{
+  //Prints if user answers incorrectly
       System.out.println("Incorrect.");
     }
+  //Code for each category functions identically and is tailored accordingly
     }
 
    //If user chooses Dogs for $400
@@ -163,7 +165,7 @@ public class Jeopardy {
    }
   }
 
-//Prints out final score 
+//Prints out final score and text depending on how high the score is 
 System.out.println(score);
 if(score <= 200){
   System.out.println("Play again to win more!");
